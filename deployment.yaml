@@ -1,1 +1,18 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-hello
+  template:
+    metadata:
+      labels:
+        app: spring-hello
+    spec:
+      containers:
+      - name: spring-hello
+        image: YOUR_DOCKER_USERNAME/test:6
+        imagePullPolicy: Always
